@@ -1,487 +1,232 @@
-/* Global */
-body {
+/* =========================
+   GLOBAL BASE
+   ========================= */
+
+* {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  background-color: #0b0f19;
-  color: #e5e7eb;
-  line-height: 1.7;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Links */
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #0b0f19;
+  color: #e5e7eb;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
 a {
   color: #38bdf8;
   text-decoration: none;
 }
-a:hover {
-  text-decoration: underline;
-}
 
-/* Navbar */
-nav {
-  background: rgba(15, 23, 42, 0.9);
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #1f2937;
-  z-index: 1000;
-}
+/* =========================
+   PAGE LAYOUT
+   ========================= */
 
-nav span {
-  font-weight: bold;
-  color: #38bdf8;
-}
-
-/* Page container */
 .page {
   max-width: 1000px;
   margin: auto;
   padding: 2rem;
+  min-height: 100vh;
 }
 
-/* Hero section */
+/* =========================
+   NAVBAR
+   ========================= */
+
+nav {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* =========================
+   HERO
+   ========================= */
+
 .hero {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   background: radial-gradient(circle at top, #1e293b, #0b0f19);
   border-radius: 12px;
   margin-bottom: 3rem;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .hero p {
   color: #9ca3af;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .hero-buttons {
   margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .hero-buttons a {
-  margin: 0 1rem;
-  padding: 0.75rem 1.5rem;
+  padding: 12px 20px;
   border-radius: 8px;
   background: #38bdf8;
   color: #020617;
   font-weight: 600;
 }
 
-/* Grid cards */
+/* =========================
+   GRID & CARDS
+   ========================= */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
-/* Card */
 .card {
   background: #121826;
   padding: 1.5rem;
   border-radius: 12px;
   border: 1px solid #1f2937;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+  text-align: center;
 }
 
 .card h3 {
-  margin-top: 0;
   color: #38bdf8;
 }
 
-/* Article layout */
+/* =========================
+   ARTICLE
+   ========================= */
+
 article {
   background: #121826;
   padding: 2rem;
   border-radius: 12px;
   border: 1px solid #1f2937;
+  max-width: 800px;
+  margin: auto;
 }
 
-/* Section titles */
-.section-title {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  color: #f9fafb;
-  border-bottom: 1px solid #1f2937;
-  padding-bottom: 0.5rem;
-}
+/* =========================
+   ARTICLE META
+   ========================= */
 
-/* Tutorial list */
-.tutorial-section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.tutorial-section li {
-  padding: 0.5rem 0;
-}
-
-/* KaTeX */
-.katex {
-  font-size: 1.1rem;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Card hover animation enhancement */
-.card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
-}
-
-/* Button hover animation */
-.hero-buttons a {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.hero-buttons a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-}
-
-/* Fix KaTeX for dark theme */
-.katex {
-  color: #e5e7eb;
-}
-
-.katex-display {
-  color: #e5e7eb;
-}
-
-/* Optional: make equations slightly glow */
-.katex-display {
-  padding: 1rem 0;
-}
-/* 
-  Style for article category label in Articles page.
-  We separate this from the clickable title so that:
-  - Only the title acts as a link
-  - Category appears as a visual tag/metadata
-  - Improves readability and UX (similar to research/blog sites)
-*/
-.category {
-  margin-top: 6px;        /* Adds spacing between title and category text */
-  color: #7dd3fc;         /* Light blue accent color for category label */
-  font-size: 0.9rem;      /* Slightly smaller than title to show hierarchy */
-}
-
-/* 
-  Article header section at the top of each article page.
-  Displays title and metadata like category, level, and date.
-*/
 .article-header {
   margin-bottom: 24px;
 }
 
-/* Container for metadata items (category, level, date) */
 .article-meta {
   display: flex;
   gap: 12px;
   margin-top: 8px;
+  flex-wrap: wrap;
 }
 
-/* Individual metadata badges */
 .meta-item {
-  background: rgba(125, 211, 252, 0.1); /* subtle blue glow */
+  background: rgba(125, 211, 252, 0.1);
   color: #7dd3fc;
   padding: 4px 10px;
   border-radius: 12px;
   font-size: 0.85rem;
 }
 
-/* 
-  Footer section shown at the bottom of every page.
-  Provides identity and professionalism to the site.
-*/
+/* =========================
+   TOPIC PAGE
+   ========================= */
+
+.topic-image {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin: 24px 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.topic-section {
+  margin-top: 32px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
 .footer {
   margin-top: 60px;
   padding: 24px;
   text-align: center;
   border-top: 1px solid rgba(255,255,255,0.1);
   color: #9ca3af;
-  font-size: 0.9rem;
 }
 
-/* Secondary footer text */
-.footer-sub {
-  margin-top: 6px;
-  font-size: 0.8rem;
-  color: #6b7280;
+/* =========================
+   KATEX (MATH)
+   ========================= */
+
+.katex {
+  color: #e5e7eb;
 }
 
-/* =========================================================
-   MOBILE RESPONSIVE STYLES
-   Improves readability and layout on phones & tablets
-   ========================================================= */
-
-/* Limit article width for better reading experience */
-article {
-  max-width: 800px;        /* Prevents very wide text on large screens */
-  margin: 0 auto;         /* Centers article horizontally */
-  padding: 0 16px;        /* Adds side padding for small screens */
-}
-
-/* Prevent LaTeX equations from breaking layout on mobile */
 .katex-display {
-  overflow-x: auto;       /* Allow horizontal scroll for long equations */
-  overflow-y: hidden;
+  overflow-x: auto;
+  padding: 1rem 0;
 }
 
-/* Responsive grid for Articles & Topics */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-}
+/* =========================
+   MOBILE
+   ========================= */
 
-/* ===============================
-   MOBILE TYPOGRAPHY ADJUSTMENTS
-   =============================== */
 @media (max-width: 768px) {
 
-  /* Reduce large headings for phone screens */
-  h1 {
-    font-size: 1.6rem;
+  .hero h1 {
+    font-size: 2rem;
   }
 
-  h2 {
-    font-size: 1.3rem;
+  .hero-buttons {
+    flex-direction: column;
   }
 
-  /* Metadata badges wrap nicely on small screens */
-  .article-meta {
-    flex-wrap: wrap;
-    gap: 8px;
+  .hero-buttons a {
+    width: 90%;
+    max-width: 320px;
   }
 
-  .meta-item {
-    font-size: 0.75rem;
-    padding: 4px 8px;
+  .grid {
+    grid-template-columns: 1fr;
   }
 
-  /* Reduce padding in article cards */
-  .card {
-    padding: 14px;
-  }
-
-  /* Stack navbar items vertically on mobile */
   nav {
     flex-direction: column;
-    gap: 8px;
   }
 
-  /* Footer spacing for mobile */
   .footer {
-    font-size: 0.8rem;
-    padding: 16px;
-  }
-
-  .footer-sub {
-    font-size: 0.75rem;
-  }
-}
-
-/* ===============================
-   GENERAL MOBILE SAFETY FIXES
-   =============================== */
-
-/* Prevent horizontal scrolling */
-body {
-  overflow-x: hidden;
-}
-
-/* Make images responsive if added later */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ============================
-   Mobile Responsive Styles
-   Purpose: Fix cramped layout on small screens
-   Ensures buttons, text, and navbar stack vertically
-   ============================ */
-
-@media (max-width: 768px) {
-
-  /* Make navbar vertical and centered */
-  nav {
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px;
-  }
-
-  nav a {
-    font-size: 1.1rem;
-  }
-
-  /* Hero section spacing */
-  .hero {
-    padding: 24px 16px;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    margin-top: 12px;
-  }
-
-  /* Fix button layout (THIS is your main bug) */
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;   /* stack buttons */
-    gap: 14px;               /* space between them */
-    margin-top: 20px;
-    width: 100%;
-    align-items: center;
-  }
-
-  .hero-buttons button,
-  .hero-buttons a {
-    width: 90%;              /* full width buttons */
-    max-width: 320px;
-    padding: 12px 16px;
-    font-size: 1rem;
-  }
-
-  /* Article cards stack */
-  .grid {
-    grid-template-columns: 1fr;
-    padding: 0 12px;
-  }
-
-  .card {
-    padding: 16px;
-  }
-
-  /* Math overflow handling */
-  .katex-display {
-    overflow-x: auto;
-    padding: 8px 0;
-  }
-
-  /* Article page spacing */
-  .article-container {
-    padding: 16px;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
     font-size: 0.85rem;
-    padding: 16px;
   }
 }
-
-/* ============================
-   Hero buttons styling
-   Purpose: Make Links look like buttons
-   ============================ */
-
-.hero-buttons a {
-  display: inline-block;
-  background: #38bdf8;
-  color: #000;
-  padding: 12px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.2s ease;
-}
-
-.hero-buttons a:hover {
-  background: #0ea5e9;
-}
-
-
-/* ============================
-   Mobile Responsive Fix
-   Purpose: Prevent buttons from overlapping on small screens
-   Stack buttons vertically and center them
-   ============================ */
-
-@media (max-width: 768px) {
-
-  .hero {
-    padding: 24px 16px;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    margin-top: 12px;
-  }
-
-  /* Fix cramped buttons on mobile */
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;   /* stack buttons vertically */
-    gap: 14px;               /* spacing between buttons */
-    margin-top: 20px;
-    width: 100%;
-    align-items: center;
-  }
-
-  .hero-buttons a {
-    width: 90%;              /* full-width buttons */
-    max-width: 320px;
-    text-align: center;
-  }
-
-  /* Topics grid becomes single column */
-  .grid {
-    grid-template-columns: 1fr;
-    padding: 0 12px;
-  }
-
-  footer {
-    text-align: center;
-    font-size: 0.85rem;
-    padding: 16px;
-  }
-}
-
-
-
-
-
-
