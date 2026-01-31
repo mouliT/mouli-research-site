@@ -325,6 +325,163 @@ img {
   height: auto;
 }
 
+/* ============================
+   Mobile Responsive Styles
+   Purpose: Fix cramped layout on small screens
+   Ensures buttons, text, and navbar stack vertically
+   ============================ */
+
+@media (max-width: 768px) {
+
+  /* Make navbar vertical and centered */
+  nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+  }
+
+  /* Hero section spacing */
+  .hero {
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-top: 12px;
+  }
+
+  /* Fix button layout (THIS is your main bug) */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;   /* stack buttons */
+    gap: 14px;               /* space between them */
+    margin-top: 20px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+    width: 90%;              /* full width buttons */
+    max-width: 320px;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  /* Article cards stack */
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0 12px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  /* Math overflow handling */
+  .katex-display {
+    overflow-x: auto;
+    padding: 8px 0;
+  }
+
+  /* Article page spacing */
+  .article-container {
+    padding: 16px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 16px;
+  }
+}
+
+/* ============================
+   Hero buttons styling
+   Purpose: Make Links look like buttons
+   ============================ */
+
+.hero-buttons a {
+  display: inline-block;
+  background: #38bdf8;
+  color: #000;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.hero-buttons a:hover {
+  background: #0ea5e9;
+}
+
+
+/* ============================
+   Mobile Responsive Fix
+   Purpose: Prevent buttons from overlapping on small screens
+   Stack buttons vertically and center them
+   ============================ */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-top: 12px;
+  }
+
+  /* Fix cramped buttons on mobile */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;   /* stack buttons vertically */
+    gap: 14px;               /* spacing between buttons */
+    margin-top: 20px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-buttons a {
+    width: 90%;              /* full-width buttons */
+    max-width: 320px;
+    text-align: center;
+  }
+
+  /* Topics grid becomes single column */
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0 12px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 16px;
+  }
+}
+
+
+
 
 
 
