@@ -3,8 +3,9 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Articles from "./pages/Articles";
 import ArticlePage from "./pages/ArticlePage";
+import Tutorials from "./pages/Tutorials";
 
-export default function App() {
+function App() {
   return (
     <>
       <Navbar />
@@ -12,7 +13,10 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:slug" element={<ArticlePage />} />
+        <Route path="/tutorials" element={<Tutorials />} />
       </Routes>
     </>
   );
 }
+
+export default App;

@@ -2,15 +2,16 @@ import { Link } from "react-router-dom";
 
 export default function Articles() {
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2>Articles</h2>
-      <ul>
-        <li>
-          <Link to="/articles/torque-ripple">
-            Torque Ripple in SRM
-          </Link>
-        </li>
-      </ul>
+    <div className="page fade-in">
+      <h2 className="section-title">Articles</h2>
+
+      <div className="grid">
+        <div className="card">
+          <h3>Torque Ripple in SRM</h3>
+          <p>Electric Drives · Control</p>
+        </div>
+      </div>
     </div>
   );
 }
+
