@@ -5,7 +5,7 @@ level: Intermediate
 date: 2026-02-01
 ---
 
-# Torque Ripple in Switched Reluctance Motor
+## Introduction
 
 Torque in an SRM is given by:
 
@@ -15,26 +15,44 @@ $$
 
 ## SRM Structure
 
-![SRM Motor Structure](/images/srm-structure.png)
+<img src="/images/srm-structure.png" class="fade-media" />
+<div class="figure-caption">
+Figure 1: Physical structure of a switched reluctance motor.
+</div>
 
-The doubly salient structure of the SRM causes variation in inductance with rotor position.
+## Torque Ripple Animation
 
-## Torque Ripple Phenomenon (Animation)
+<img src="/images/torque-ripple.gif" class="fade-media" />
+<div class="figure-caption">
+Figure 2: Torque ripple during commutation.
+</div>
 
-![Torque Ripple Animation](/images/torque-ripple.gif)
+## Torque Waveforms (Gallery)
 
-The ripple appears due to phase commutation and nonlinear inductance profile.
+<div class="gallery">
+  <img src="/images/torque1.jpg" class="fade-media" />
+  <img src="/images/torque2.jpg" class="fade-media" />
+  <img src="/images/torque3.jpg" class="fade-media" />
+</div>
+<div class="figure-caption">
+Figure 3: Comparison of torque waveforms.
+</div>
 
-## Torque Waveform
+## Experimental Video
 
-![Torque Waveform](/images/torque-waveform.jpg)
+<div class="video-container">
+  <iframe
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title="Torque Ripple Experiment"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 
-This waveform shows high ripple at low speed operation.
+<div class="figure-caption">
+Figure: Experimental demonstration of torque ripple reduction.
+</div>
 
----
-
-You can place images **anywhere** between text and equations.
-
----
 
 
