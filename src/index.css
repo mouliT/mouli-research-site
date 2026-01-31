@@ -168,3 +168,75 @@ article {
   box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
 }
 
+/* Fix KaTeX for dark theme */
+.katex {
+  color: #e5e7eb;
+}
+
+.katex-display {
+  color: #e5e7eb;
+}
+
+/* Optional: make equations slightly glow */
+.katex-display {
+  padding: 1rem 0;
+}
+/* 
+  Style for article category label in Articles page.
+  We separate this from the clickable title so that:
+  - Only the title acts as a link
+  - Category appears as a visual tag/metadata
+  - Improves readability and UX (similar to research/blog sites)
+*/
+.category {
+  margin-top: 6px;        /* Adds spacing between title and category text */
+  color: #7dd3fc;         /* Light blue accent color for category label */
+  font-size: 0.9rem;      /* Slightly smaller than title to show hierarchy */
+}
+
+/* 
+  Article header section at the top of each article page.
+  Displays title and metadata like category, level, and date.
+*/
+.article-header {
+  margin-bottom: 24px;
+}
+
+/* Container for metadata items (category, level, date) */
+.article-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Individual metadata badges */
+.meta-item {
+  background: rgba(125, 211, 252, 0.1); /* subtle blue glow */
+  color: #7dd3fc;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+/* 
+  Footer section shown at the bottom of every page.
+  Provides identity and professionalism to the site.
+*/
+.footer {
+  margin-top: 60px;
+  padding: 24px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* Secondary footer text */
+.footer-sub {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+
+

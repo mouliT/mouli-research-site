@@ -1,3 +1,10 @@
+---
+title: Torque Ripple in Switched Reluctance Motor
+category: Electric Drives
+level: Intermediate
+date: 2026-02-01
+---
+
 # Torque Ripple in Switched Reluctance Motor
 
 Torque is given by:

@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Articles from "./pages/Articles";
 import ArticlePage from "./pages/ArticlePage";
 import Tutorials from "./pages/Tutorials";
+import Footer from "./components/Footer";
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <Route path="/articles/:slug" element={<ArticlePage />} />
         <Route path="/tutorials" element={<Tutorials />} />
       </Routes>
+      <Footer />
     </>
   );
 }
