@@ -230,3 +230,20 @@ article {
     font-size: 0.85rem;
   }
 }
+
+/* 
+  Styling images inside markdown articles.
+  Makes images centered, responsive, and visually clean.
+*/
+article img {
+  max-width: 100%;        /* Never overflow screen */
+  border-radius: 12px;   /* Rounded corners */
+  margin: 20px auto;     /* Space above & below */
+  display: block;        /* Center image */
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15); /* soft glow */
+}
+
+/* Slightly emphasize GIF animations */
+article img[src$=".gif"] {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+}
