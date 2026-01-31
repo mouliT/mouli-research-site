@@ -238,5 +238,93 @@ article {
   color: #6b7280;
 }
 
+/* =========================================================
+   MOBILE RESPONSIVE STYLES
+   Improves readability and layout on phones & tablets
+   ========================================================= */
+
+/* Limit article width for better reading experience */
+article {
+  max-width: 800px;        /* Prevents very wide text on large screens */
+  margin: 0 auto;         /* Centers article horizontally */
+  padding: 0 16px;        /* Adds side padding for small screens */
+}
+
+/* Prevent LaTeX equations from breaking layout on mobile */
+.katex-display {
+  overflow-x: auto;       /* Allow horizontal scroll for long equations */
+  overflow-y: hidden;
+}
+
+/* Responsive grid for Articles & Topics */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* ===============================
+   MOBILE TYPOGRAPHY ADJUSTMENTS
+   =============================== */
+@media (max-width: 768px) {
+
+  /* Reduce large headings for phone screens */
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  /* Metadata badges wrap nicely on small screens */
+  .article-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .meta-item {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  /* Reduce padding in article cards */
+  .card {
+    padding: 14px;
+  }
+
+  /* Stack navbar items vertically on mobile */
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Footer spacing for mobile */
+  .footer {
+    font-size: 0.8rem;
+    padding: 16px;
+  }
+
+  .footer-sub {
+    font-size: 0.75rem;
+  }
+}
+
+/* ===============================
+   GENERAL MOBILE SAFETY FIXES
+   =============================== */
+
+/* Prevent horizontal scrolling */
+body {
+  overflow-x: hidden;
+}
+
+/* Make images responsive if added later */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
 
 
