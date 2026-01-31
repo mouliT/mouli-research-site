@@ -7,7 +7,7 @@ export default function ArticlePage() {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    fetch(`/src/content/articles/${slug}.md`)
+    fetch(`/content/articles/${slug}.md`)
       .then((res) => res.text())
       .then(setContent);
   }, [slug]);
