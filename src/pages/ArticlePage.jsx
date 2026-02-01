@@ -2,8 +2,8 @@ import { useParams } from "react-router-dom";
 import MathContent from "../components/MathContent";
 
 /*
-  Load all markdown articles at build time using Vite's glob import.
-  This allows us to dynamically render articles based on URL slug.
+  Load all markdown articles from src/content/articles at build time.
+  Vite's import.meta.glob allows dynamic imports based on filename.
 */
 const articles = import.meta.glob("../content/articles/*.md", {
   query: "?raw",
@@ -14,7 +14,7 @@ const articles = import.meta.glob("../content/articles/*.md", {
 export default function ArticlePage() {
   const { slug } = useParams();
 
-  // Find the markdown file that matches the URL slug
+  // Find the markdown file matching the URL slug
   const match = Object.entries(articles).find(([path]) =>
     path.includes(`${slug}.md`)
   );
@@ -41,14 +41,14 @@ export default function ArticlePage() {
   const date = dateMatch ? dateMatch[1] : "";
 
   /* ============================
-     REMOVE FRONTMATTER
+     REMOVE FRONTMATTER BLOCK
      ============================ */
 
   const content = rawContent.replace(/---[\s\S]*?---/, "").trim();
 
   /* ============================
      GENERATE TABLE OF CONTENTS
-     Extract all ## headings from markdown
+     Extract all "## Heading" lines
      ============================ */
 
   const headings = content.match(/^##\s.+/gm) || [];
@@ -57,7 +57,7 @@ export default function ArticlePage() {
     <div className="page fade-in">
 
       {/* ============================
-          ARTICLE HEADER (title + metadata)
+          ARTICLE HEADER
           ============================ */}
       <div className="article-header">
         <h1>{title}</h1>
@@ -71,15 +71,16 @@ export default function ArticlePage() {
 
       {/* ============================
           TABLE OF CONTENTS
-          Auto-generated from ## headings
           ============================ */}
       {headings.length > 0 && (
         <div className="toc">
           <h3>Contents</h3>
           <ul>
             {headings.map((h, i) => {
-              const text = h.replace("## ", "");
-              const id = text.toLowerCase().replace(/\s+/g, "-");
+              const text = h.replace("## ", "").trim();
+              const id = text
+                .toLowerCase()
+                .replace(/[^\w]+/g, "-");
 
               return (
                 <li key={i}>
@@ -93,11 +94,11 @@ export default function ArticlePage() {
 
       {/* ============================
           ARTICLE BODY
-          Render markdown with LaTeX, images, GIFs, video, gallery
           ============================ */}
       <article>
         <MathContent content={content} />
       </article>
+
     </div>
   );
 }

@@ -13,6 +13,7 @@ $$
 T = \frac{1}{2} i^2 \frac{dL(\theta)}{d\theta}
 $$
 
+
 ## SRM Structure
 
 <img src="/images/srm-structure.png" class="fade-media" />
@@ -20,23 +21,46 @@ $$
 Figure 1: Physical structure of a switched reluctance motor.
 </div>
 
+
 ## Torque Ripple Animation
 
-<img src="/images/torque-ripple.gif" class="fade-media" />
+<img src="/images/torque-ripple.gif" class="fade-media img-sm" />
+
 <div class="figure-caption">
 Figure 2: Torque ripple during commutation.
 </div>
 
+
 ## Torque Waveforms (Gallery)
 
 <div class="gallery">
-  <img src="/images/torque1.jpg" class="fade-media" />
-  <img src="/images/torque2.jpg" class="fade-media" />
-  <img src="/images/torque3.jpg" class="fade-media" />
+
+  <div class="subfigure">
+    <img src="/images/torque1.jpg" class="fade-media" />
+    <div class="subfigure-label">(a) subcaption-1</div>
+  </div>
+
+  <div class="subfigure">
+    <img src="/images/torque2.jpg" class="fade-media" />
+    <div class="subfigure-label">(b) subcaption-2</div>
+  </div>
+
+  <div class="subfigure">
+    <img src="/images/torque3.jpg" class="fade-media" />
+    <div class="subfigure-label">(c) subcaption-3</div>
+  </div>
+
+  <div class="subfigure">
+    <img src="/images/torque3.jpg" class="fade-media" />
+    <div class="subfigure-label">(d) subcaption-4</div>
+  </div>
+
 </div>
+
 <div class="figure-caption">
-Figure 3: Comparison of torque waveforms.
+Figure 3: Comparison of torque waveforms under different operating conditions.
 </div>
+
 
 ## Experimental Video
 
@@ -51,8 +75,5 @@ Figure 3: Comparison of torque waveforms.
 </div>
 
 <div class="figure-caption">
-Figure: Experimental demonstration of torque ripple reduction.
+Figure 4: Experimental demonstration of torque ripple reduction.
 </div>
-
-
-
